@@ -87,7 +87,7 @@ window.onload = function() {
         if (event.target.classList.contains('btn-rm')) {
             let tmp = event.target;
             tmp.closest('li').remove();
-        } else if (event.target.classList.contains('btn-edit')) {
+        } else if (event.target.classList.contains('btn-edit') || event.target.tagName == 'SPAN') {
             let btn = event.target;
             let tmpInput = event.target.parentElement.parentElement.childNodes[0].lastChild;
             tmpInput.classList.toggle('hidden');
@@ -96,10 +96,15 @@ window.onload = function() {
             tmpSpan.classList.toggle('hidden');
 
             function editPurchase() {
-                tmpSpan.innerHTML = tmpInput.value;
-                tmpSpan.classList.toggle('hidden');
-                tmpInput.classList.toggle('hidden');
-                tmpInput.value = '';
+                if(tmpInput.value) {
+                    tmpSpan.innerHTML = tmpInput.value;
+                    tmpSpan.classList.toggle('hidden');
+                    tmpInput.classList.toggle('hidden');
+                    tmpInput.value = '';
+                } else {
+                    tmpSpan.classList.toggle('hidden');
+                    tmpInput.classList.toggle('hidden');
+                }
             }
 
             tmpInput.onkeypress = function (e) {
