@@ -23,6 +23,7 @@ body * {
     border-radius: 5px;
     border: #bdbdbd 1px solid;
     padding: 5px;
+    background-color: #fff;
 }
 
 .card-footer {

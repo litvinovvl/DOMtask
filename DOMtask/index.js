@@ -46,7 +46,7 @@ window.onload = function() {
             purchaseInput.setAttribute('type', 'text');
             purchaseInput.classList.add('hidden');
             purchaseText.classList.add('purchase-text');
-            purchaseSpan.innerHTML = input.value;
+            purchaseSpan.innerText = input.value;
             purchaseText.appendChild(purchaseSpan);
             purchaseText.appendChild(purchaseInput);
             purchaseItem.appendChild(purchaseText);
@@ -121,8 +121,7 @@ window.onload = function() {
                 }
             }
             progressBar.innerHTML = Math.round((sum/checks.length)*100) + '%';
-            progressBar.style.width = Math.round((sum/checks.length)*100)+'%';
+            progressBar.style.width = Math.round((sum/checks.length)*100) + '%';
         }
-    }
+    };
 };
-
